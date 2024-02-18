@@ -1,6 +1,6 @@
 # VISIT SICILY - TTATTÀ
 
-Costruiremo un'applicazione web turistica. La chiameremo **Visit Sicily con Ttattà**. 
+Costruiremo un'applicazione web turistica. La chiameremo **Visit Sicily con Ttattà**, in quanto sfrutterà "l'alieno ttatta" attraverso l'intelligenza artificiale. 
 
 La maggior parte del lavoro sarà sul web, e utilizzeremo le estensioni native di [Hotwire](https://hotwired.dev/) per le app [iOS e Android](https://turbo.hotwired.dev/handbook/native).
 
