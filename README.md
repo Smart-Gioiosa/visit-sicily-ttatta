@@ -9,7 +9,7 @@ Per costruire l'interfaccia grafica utilzzeremo [Tailwindcss](https://tailwindcs
 ## Setup del progetto
 ### I requisiti preliminari
 
-Verifica che siano installate le versioni corrette di Ruby e Rails. Avrai bisogno di almeno Rails 7 e Ruby 3.2 per la creazione di questo progetto.
+Verifica che siano installate le versioni corrette di Ruby e Rails. Avrai bisogno di almeno Rails 7.1.3 e Ruby 3.3.0 per la creazione di questo progetto.
 
 ```sh
 rails -v 
