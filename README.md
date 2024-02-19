@@ -71,3 +71,63 @@ Se si verifica un problema durante la preparazione del database, potrebbe essere
 **bin/dev** utilizza Foreman per eseguire il server Rails e i processi per monitorare i file CSS e JS in modo che vengano ricompilati automaticamente quando vengono modificati.
 I comandi per avviare questi processi sono definiti in Procfile.dev.
 
+
+La nostra applicazione sarà anche un api per servire un'appliczione mobile o chatbot, inseriamo quindi graphql.
+
+### Aggiunta della gemma GraphQL.
+
+La gemma graphql è la gemma per la creazione di API GraphQL all'interno delle applicazioni Ruby. È utilizzata da aziende come Shopify e GitHub.
+
+```sh 
+bundle add graphql
+```
+
+Una volta installata quella gemma, possiamo eseguire un generatore di Rails fornito dalla gemma stessa. Questo generatore configurerà la struttura GraphQL di cui la nostra applicazione ha bisogno:
+
+```sh
+rails g graphql:install
+```
+
+Questo generatore genera diversi file differenti.
+
+Per testare la nostra API aggiungiamo la gemma `graphiql-rails`:
+```sh
+group :development do
+  gem 'graphiql-rails'
+end
+```
+
+### Configurazione di graphiql-rails
+Nel file `config\routes.rb` aggiungiamo la seguente istruzione
+
+``` ruby
+
+Rails.application.routes.draw do
+
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "graphql#execute"
+  end
+
+  post "/graphql", to: "graphql#execute"
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  get "up" => "rails/health#show", as: :rails_health_check
+
+  # Defines the root path route ("/")
+  # root "posts#index"
+
+end
+```
+
+Inoltre se abbiamo creato la nostra applicazione rails con l'instruzione --api[Questo non è il nostro caso], bisogna seguire le seguenti configurazioni:
+
+- Aggiungere  "sprockets/railtie" ad  `application.rb`.
+
+- Creare un file `app/assets/config/manifest.js` ed inseire inserire:
+
+```sh
+//= link graphiql/rails/application.css
+//= link graphiql/rails/application.js
+```
