@@ -3,7 +3,7 @@
 module Types
   class MutationType < Types::BaseObject
 
-    field :create_point, mutation: Mutations::CreatePoint
+    field :add_point, mutation: Mutations::Points::Add
 
 
     # TODO: remove me
