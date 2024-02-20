@@ -3,6 +3,27 @@
 module Types
   class QueryType < Types::BaseObject
 
+
+    #Get a specific category
+    field :category, CategoryType, null: false do
+      argument :id, ID, required: true
+    end
+
+    field :category_name, CategoryType, null: false do
+      argument :name, String, required: true
+    end
+
+
+    def category(id:)
+      Category.find(id)
+    end
+
+    def category_name(name:)
+      Category.find_by!(name: name)
+    end
+
+
+
     field :points, [Types::PointType], null: false #Restituisce un array di points
     def points
       Point.all
