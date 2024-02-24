@@ -29,6 +29,10 @@ module Types
       Point.all
     end
 
+    def all 
+      Event.all.with_attached_image
+    end
+    
     #Get a specific point 
     field :point, Types::PointType, null: false do
       argument :id, ID, required: true

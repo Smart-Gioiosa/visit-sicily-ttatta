@@ -77,6 +77,9 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
+    apollo_upload_server (2.1.5)
+      actionpack (>= 6.1.6)
+      graphql (>= 1.8)
     base64 (0.2.0)
     bigdecimal (3.1.6)
     bindex (0.8.1)
@@ -255,6 +258,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  apollo_upload_server
   bootsnap
   capybara
   cssbundling-rails
