@@ -97,5 +97,5 @@ Questo generatore genera diversi file differenti, che utilizzeremo per creare l'
 Inoltre per testare le nostre api utilizzeremo [Postman](https://www.postman.com/).
 
 
-### Capitoli
-- [Il modello point](/public/documentation/points/model_point.md)
+## Capitoli
+- [Il modello point - Punto di interesse](/public/documentation/points/model_point.md)

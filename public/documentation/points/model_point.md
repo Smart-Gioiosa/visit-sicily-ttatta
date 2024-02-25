@@ -1,4 +1,4 @@
-### Il modello `point`
+# Il modello `point`
 
 Di seguito il diagramma delle tabelle PostgresQL(il nostro database) che caratterizza  i nostri `points`(Punti di interesse) e le sue relazioni. 
 
@@ -79,3 +79,32 @@ has_one :cover_image_blob, through: :cover_image_attachment
 ```
 
 Il nostro modello ha quindi una `cover_image_attachment` e un `cover_image_blob` a cui può accedere tramite l'associazione `cover_image_attachment`. Se guardi il codice sorgente del metodo `has_one_attached`, c'è un po' di più dietro, ma fondamentalmente è questo che succede. Non è magia!
+
+### Validazione dell'allegato
+Per evitare che involontariamente un utente carichi un allegato troppo grande o nel formato non corretto, aggiungi al modello `app/models/point` la seguente validazione:
+
+```ruby
+class Point < ApplicationRecord
+    #...
+    has_one_attached :cover_image
+    validate :acceptable_image
+
+    def acceptable_image
+        return unless cover_image.attached?
+        
+        unless cover_image.blob.byte_size <= 1.megabyte
+            errors.add(:cover_image, "is too big")
+        end
+
+        acceptable_types = ["image/jpeg", "image/png", "image/webp"]
+
+        unless acceptable_types.include?(cover_image.content_type)
+            errors.add(:cover_image, "must be a JPEG, PNG or WEBP")
+        end
+    end
+
+end
+
+```
+
+Il metodo `acceptable_image` fa in modo che un allegato non sia più grande di un megabyte e che sia nei seguenti formati: `jpeg`, `png` e `webp`.

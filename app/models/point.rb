@@ -2,9 +2,10 @@ class Point < ApplicationRecord
     has_many :categorized_points, dependent: :destroy
     has_many :categories, through: :categorized_points
     has_one_attached :cover_image
+    validate :acceptable_image
 
     def acceptable_image
-        return unless image.attached?
+        return unless cover_image.attached?
         
         unless cover_image.blob.byte_size <= 1.megabyte
             errors.add(:cover_image, "is too big")
