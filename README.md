@@ -95,3 +95,7 @@ Questo generatore genera diversi file differenti.
 Questo generatore genera diversi file differenti, che utilizzeremo per creare l'api GraphQL per il nostro progetto.
 
 Inoltre per testare le nostre api utilizzeremo [Postman](https://www.postman.com/).
+
+
+### Capitoli
+- [Il modello point](/public/documentation/points/model_point.md)
