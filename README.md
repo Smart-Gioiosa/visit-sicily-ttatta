@@ -57,7 +57,7 @@ Esegui il comando seguente per creare l'app Rails
 rails new visit-sicily-ttatta -j esbuild --css tailwind -a propshaft -d postgresql
 ```
 
-Questo creerà l'app in una cartella chiamata shopping-gioioso.
+Questo creerà l'app in una cartella chiamata visit-sicily-ttatta.
 
 Addesso possiamo avviare l'app Rails:
 
@@ -95,39 +95,4 @@ Per testare la nostra API aggiungiamo la gemma `graphiql-rails`:
 group :development do
   gem 'graphiql-rails'
 end
-```
-
-### Configurazione di graphiql-rails
-Nel file `config\routes.rb` aggiungiamo la seguente istruzione
-
-``` ruby
-
-Rails.application.routes.draw do
-
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "graphql#execute"
-  end
-
-  post "/graphql", to: "graphql#execute"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
-
-end
-```
-
-Inoltre se abbiamo creato la nostra applicazione rails con l'instruzione --api[Questo non è il nostro caso], bisogna seguire le seguenti configurazioni:
-
-- Aggiungere  "sprockets/railtie" ad  `application.rb`.
-
-- Creare un file `app/assets/config/manifest.js` ed inseire inserire:
-
-```sh
-//= link graphiql/rails/application.css
-//= link graphiql/rails/application.js
 ```
