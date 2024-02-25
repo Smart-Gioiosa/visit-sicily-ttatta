@@ -4,7 +4,9 @@ Costruiremo un'applicazione web turistica. La chiameremo **Visit Sicily con Ttat
 
 La maggior parte del lavoro sarà sul web, e utilizzeremo le estensioni native di [Hotwire](https://hotwired.dev/) per le app [iOS e Android](https://turbo.hotwired.dev/handbook/native).
 
-Per costruire l'interfaccia grafica utilzzeremo [Tailwindcss](https://tailwindcss.com/).
+Inoltre, il framework Ruby on Rails ci permette di costruire all'interno dell'applicazione stessa,  le api che andranno a servire un eventuale servizio esterno che può essere un #chatbot o un'applicazione web mobile nativa. Per fare ciò utilizzeremo [GraphQL](https://graphql.org/).
+
+Per costruire l'interfaccia grafica utilizzeremo [Tailwindcss](https://tailwindcss.com/).
 
 ## Setup del progetto
 ### I requisiti preliminari
@@ -90,9 +92,6 @@ rails g graphql:install
 
 Questo generatore genera diversi file differenti.
 
-Per testare la nostra API aggiungiamo la gemma `graphiql-rails`:
-```sh
-group :development do
-  gem 'graphiql-rails'
-end
-```
+Questo generatore genera diversi file differenti, che utilizzeremo per creare l'api GraphQL per il nostro progetto.
+
+Inoltre per testare le nostre api utilizzeremo [Postman](https://www.postman.com/).
