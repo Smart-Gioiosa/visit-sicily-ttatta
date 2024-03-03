@@ -1,6 +1,13 @@
 # Il modello `point` - Punto di interesse
 
-Di seguito il diagramma delle tabelle PostgresQL(il nostro database) che caratterizza  i nostri `points`(Punti di interesse) e le sue relazioni. 
+Iniziamo modellando il diagramma delle tabelle. Il nostro **database PostgreQL** inizialmente avrà una tabella points(Punti di interesse) e sarà associato alle tabelle:
+
+- categories(Categorie)
+
+- reviews(Recensioni)
+
+- point_images(Galleria immagini)
+
 
 ![Diagramma della risorsa point](/public/documentation/points/visit-ttatta-points-diagram.png "Risorsa point")
 
