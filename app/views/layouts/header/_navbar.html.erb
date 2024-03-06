@@ -1,0 +1,47 @@
+<!-- Navigation -->
+<nav class="sticky top-0 bg-white shadow-md" data-controller="navbar">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <a href="/" class="text-xl font-bold text-gray-800">
+        Visit Sicily<br>
+        <div class="text-xs text-center">con Ttattà</div>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <a role="button" class="lg:hidden focus:outline-none shadow-md p-2 rounded-full flex" data-action="click->navbar#toggle">
+            Menu 
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" fill="none" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden lg:flex space-x-4 shadow-md p-3 rounded-full"> 
+            <li><a href="/" class="text-gray-600 hover:text-gray-800">Cosa vedere</a></li>
+            <li><a href="/" class="text-gray-600 hover:text-gray-800">Esperienze</a></li>
+            <li><a href="/" class="text-gray-600 hover:text-gray-800">Eventi</a></li>
+        </ul>
+        <a href="#" class="text-gray-600 hover:text-gray-800">Account</a>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="lg:hidden fixed inset-0 bg-white z-50 hidden" data-navbar-target="content">
+        <div class="flex justify-end p-4">
+            <a role="button" class="focus:outline-none" data-action="click->navbar#toggle">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </a>
+        </div>
+        <ul class="flex flex-col items-center">
+            <li class="py-2"><a href="/" class="text-gray-600 hover:text-gray-800">Home</a></li>
+            <li class="py-2"><a href="/" class="text-gray-600 hover:text-gray-800">Cosa vedere</a></li>
+            <li class="py-2"><a href="/" class="text-gray-600 hover:text-gray-800">Esperienze</a></li>
+            <li class="py-2"><a href="/" class="text-gray-600 hover:text-gray-800">Eventi</a></li>
+        </ul>
+    </div>
+</nav>
+
+   
