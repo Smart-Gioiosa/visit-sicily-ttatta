@@ -1,16 +1,10 @@
 <%= render "hero_section"%>
 
-
-<!-- Featured Listings -->
-
 <div class="py-16 px-4">
     <div class="container mx-auto">
         <h2 class="text-2xl font-bold mb-8 text-center">Cosa vedere</h2>
-        <!-- Featured Listing Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Listing Card 1 -->
-            <%Point.all. each do |point| %>
+            <%@points.each do |point| %>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <%if point.cover_image.present?%>
                         <!--<img src="image1.jpg" alt="Listing 1" class="w-full h-48 object-cover">-->
@@ -23,8 +17,6 @@
                     </div>
                 </div>
             <%end%>
-            <!-- Repeat similar structure for other listing cards -->
-
         </div>
     </div>
 </div>

@@ -99,3 +99,4 @@ Inoltre per testare le nostre api utilizzeremo [Postman](https://www.postman.com
 
 ## Capitoli
 - [Il modello point - Punto di interesse](/public/documentation/points/model_point.md)
+- [La pagina home](/public/documentation/home_page/home_page.md)
