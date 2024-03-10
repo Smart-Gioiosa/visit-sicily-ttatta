@@ -197,7 +197,7 @@ Crea il `partial` in `layouts/header/` e chiamalo `_navbar.html.erb`:
     </div>
 
     <!-- Mobile Menu -->
-    <div class="lg:hidden fixed inset-0 bg-white z-50 hidden" data-navbar-target="content">
+    <div class="lg:hidden fixed inset-0 bg-white z-50 hidden">
         <div class="flex justify-end p-4">
             <a role="button" class="focus:outline-none">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -270,7 +270,6 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="navbar"
 export default class extends Controller {
-  //static targets = [ "arrow", "menu", "closeButton"]
   static targets = ["content"]
 
     connect() {
