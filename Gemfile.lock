@@ -96,8 +96,6 @@ GEM
     concurrent-ruby (1.3.5)
     connection_pool (2.4.1)
     crass (1.0.6)
-    cssbundling-rails (1.4.0)
-      railties (>= 6.0.0)
     date (3.4.1)
     debug (1.9.1)
       irb (~> 1.10)
@@ -110,6 +108,10 @@ GEM
     graphql (2.2.9)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    importmap-rails (2.1.0)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.7.2)
     irb (1.15.2)
       pp (>= 0.6.0)
@@ -118,8 +120,6 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    jsbundling-rails (1.3.0)
-      railties (>= 6.0.0)
     logger (1.7.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -230,6 +230,14 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
+    tailwindcss-rails (4.2.2)
+      railties (>= 7.0.0)
+      tailwindcss-ruby (~> 4.0)
+    tailwindcss-ruby (4.1.4)
+    tailwindcss-ruby (4.1.4-aarch64-linux-gnu)
+    tailwindcss-ruby (4.1.4-arm64-darwin)
+    tailwindcss-ruby (4.1.4-x86_64-darwin)
+    tailwindcss-ruby (4.1.4-x86_64-linux-gnu)
     thor (1.3.0)
     timeout (0.4.3)
     turbo-rails (2.0.3)
@@ -266,11 +274,10 @@ DEPENDENCIES
   apollo_upload_server
   bootsnap
   capybara
-  cssbundling-rails
   debug
   graphql (~> 2.2)
+  importmap-rails (~> 2.1)
   jbuilder
-  jsbundling-rails
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
@@ -278,6 +285,7 @@ DEPENDENCIES
   redis (>= 4.0.1)
   selenium-webdriver
   stimulus-rails
+  tailwindcss-rails (~> 4.2)
   turbo-rails
   tzinfo-data
   web-console
